@@ -9,21 +9,11 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -95,77 +85,105 @@
     </section>
     <div>
       <style>
-        input[type="text"], select, input[type="date"], input[type="number"] {
-          width: 80%;
-          box-sizing: border-box;
-        }
+     
         form {
-            margin: 0 auto; /* Centra horizontalmente el formulario */
-            width: 50%; /* Ajusta el ancho del formulario */
-           ; /* Ajusta el flujo de los elementos hijos */
-            flex-direction: column; /* Ajusta la dirección del flujo */
-            align-items: center; /* Centra verticalmente los elementos hijos */
+            margin: 0 auto; 
+            width: 80%; 
+            flex-direction: column; 
+            align-items: center; 
         }
 
       </style>
-      <form>
+      <form target="_blank" action="formulario.php">
         <div> 
-          <label for="identificacion">Identificación:</label>
-          <input type="number" id="identificacion" name="identificacion" required><br>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Identificación:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nombres:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Apellidos:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Fecha de nacimiento:</span>
+            <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <label class="input-group-text" for="regimen-select">Tipo de régimen:</label>
+            <select class="form-select" id="regimen-select">
+              <option value="contributivo">Contributivo</option>
+              <option value="subsidiado">Subsidiado</option>
+            </select>
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <label class="input-group-text" for="regimen-select">Tipo de afiliación:</label>
+            <select class="form-select" id="regimen-select">
+              <option value="contributivo">Cotizante</option>
+              <option value="subsidiado">Beneficiario</option>
+            </select>
+          </div>
           
-          <label for="nombres">Nombres:</label>
-          <input type="text" id="nombres" name="nombres" required pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"><br>
-      
-          <label for="apellidos">Apellidos:</label>
-          <input type="text" id="apellidos" name="apellidos" required pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"><br>
-      
-          <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-          <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
-      
-          <label for="tipo_regimen">Tipo de régimen:</label>
-          <select id="tipo_regimen" name="tipo_regimen" required>
-            <option value="">Seleccionar</option>
-            <option value="contributivo">Contributivo</option>
-            <option value="subsidiado">Subsidiado</option>
-          </select><br>
-      
-          <label for="semanas_cotizadas">Semanas cotizadas en el sistema de salud:</label>
-          <input type="number" id="semanas_cotizadas" name="semanas_cotizadas" required min="0"><br>
-      
-          <label for="fecha_ingreso_salud">Fecha de ingreso al sistema de salud:</label>
-          <input type="date" id="fecha_ingreso_salud" name="fecha_ingreso_salud" required><br>
-      
-          <label for="fecha_ingreso_eps">Fecha de ingreso a la actual EPS:</label>
-          <input type="date" id="fecha_ingreso_eps" name="fecha_ingreso_eps" required><br>
-      
-          <label for="eps">EPS:</label>
-          <select id="eps" name="eps" required>
-            <option value="">Seleccionar</option>
-            <option value="sura">Sura</option>
-            <option value="nueva_eps">Nueva EPS</option>
-            <option value="salud_total">Salud Total</option>
-            <option value="sanitas">Sanitas</option>
-            <option value="savia">Savia</option>
-          </select><br>
-      
-          <label for="historia_clinica">Historia clínica:</label>
-          <input type="text" id="historia_clinica" name="historia_clinica" required pattern="[0-9]{8,12}"><br>
-      
-          <label for="cantidad_enfermedades">Cantidad de enfermedades que padece:</label>
-          <input type="number" id="cantidad_enfermedades" name="cantidad_enfermedades" required min="0"><br>
-      
-          <label for="enfermedad_relevante">Enfermedad más relevante:</label>
-          <input type="text" id="enfermedad_relevante" name="enfermedad_relevante" required><br>
-      
-          <label for="tipo_afiliacion">Tipo de afiliación:</label>
-          <select id="tipo_afiliacion" name="tipo_afiliacion" required>
-            <option value="cotizante">Cotizante</option>
-            <option value="beneficiario">Beneficiario</option>
-          </select><br>
-          <label for="Costos_Tratamiento">Valor del costo total de su tratamiento:</label>
-          <input type="number" id="Costos_Tratamiento" name="Costos_Tratamiento" required min="0"><br>
+          <div class="input-group input-group-sm mb-3">
+            <label class="input-group-text" for="regimen-select">Seleciona tu EPS:</label>
+            <select class="form-select" id="regimen-select">
+              <option value="sura">Sura</option>
+              <option value="nueva_eps">Nueva Eps</option>
+              <option value="salud_total">Salud total</option>
+              <option value="sanitas">Sanitas</option>
+              <option value="savia">Savia</option>
+            </select>
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Semanas cotizadas en el sistema de salud:</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm", required min="0">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Fecha de ingreso al sistema de salud:</span>
+            <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Fecha de ingreso a la actual EPS:</span>
+            <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm"> Historia clínica:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad de enfermedades que padece:</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm", required min="0">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm"> Enfermedad más relevante:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Valor del costo total de su tratamiento:</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm", required min="0">
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Agregar paciente</button>
+          </div>
         </div>
-      </form>
+
+    </form>
       
 </div>
   
@@ -251,35 +269,46 @@
         </div>
 
         <div class="faq-list">
-          <ul>
-            <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                <label for="identificacion">Ingrese su identificación:</label>
-                <input type="number" id="identificacion" name="identificacion" required><br>
-            
-                <label for="historia_clinica"> Actualizar tu historia clinica</label>
-                <input type="text" id="historia_clinica" name="historia_clinica" required><br>
-  
-                <label for="enfermedad_relevante">Actualizar cual es tu enfermedad más relevante:</label>
-                <input type="text" id="enfermedad_relevante" name="enfermedad_relevante" required><br>
 
-                <label for="Costos_Tratamiento">Actualizar el costo total de su tratamiento:</label>
-                <input type="number" id="Costos_Tratamiento" name="Costos_Tratamiento" required min="0"><br>
-  
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Identificación:</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                  
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Historia clinica:</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                  </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Cual es la enfermedad más relevante:</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                  </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Valor del costo total de su tratamiento:</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm", required min="0">
+                  </div>
+
+                  <div class="input-group input-group-sm mb-3">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Actualizar</button>
+                  
+                </div>
+                
               </div>
             </li>
         </div>
     </main>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
+  <!-- <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

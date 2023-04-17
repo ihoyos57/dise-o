@@ -1,4 +1,4 @@
-.glightbox-container {
+/* .glightbox-container {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -198,7 +198,7 @@
 
 .gslide-video .gvideo-wrapper {
   width: 100%;
-        /* max-width: 160vmin; */
+        /* max-width: 160vmin; 
   margin: auto;
 }
 
@@ -326,7 +326,6 @@
  * Description for mobiles
  * something like facebook does the description
  * for the photos
-*/
 
 .glightbox-mobile .glightbox-container .gslide-description {
   height: auto !important;
@@ -498,7 +497,7 @@ iframe.wait-autoplay {
 }
 
 
-/*Skin */
+/*Skin 
 
 .glightbox-clean .gslide-description {
   background: #fff;
@@ -575,8 +574,7 @@ iframe.wait-autoplay {
 }
 
 
-/*CSS Animations*/
-
+/*CSS Animations
 .gfadeIn {
   -webkit-animation: gfadeIn 0.5s ease;
   animation: gfadeIn 0.5s ease;
@@ -936,4 +934,4 @@ iframe.wait-autoplay {
   .goverlay {
     background: #000;
   }
-}
+} */
